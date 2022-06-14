@@ -29,8 +29,24 @@ Here is a basic part of codes for [GAIIC-Track1](https://www.heywhale.com/home/c
 
 1. Run `data.ipynb` cell by cell, and make sure you specify `"preliminary_test(A or B).txt"` correctly for test set of different rounds.
 
-2. Write your own config in `config.yaml`
+2. Write your own configs in `config.yaml`:
+
+    - **NOTE** 
+    
+    - The augmentation functions (`./src/dataset.py: JointDataset.aug(...)`) are not shown in codes, but replaced by place holders in comments.
+
+    - Normal augmentations like replacing, removing, and shuffling can get a comparable score.
+
+    - Multiple models ensemble is the key to get a better score.
+
+    - Hyperarameters in `config.yaml` is the same as my final solution, except those augmentation args.
 
 3. Run `python Solver.py --config config.yaml` to train models
 
-4. Set model paths in `Inferencer.py`, and specify test set path in `./src/dataset.py`, and run `python Inferencer.py` to inference on test set.
+    - GPU ids are specified at the first line of `Solver.py`, and multi-GPU training is supported (e.g. `gpus = "0,1"`)
+
+4. Run `python Inferencer.py` to inference on test set. Before that, you should:
+
+    - Set model checkpoints paths in `Inferencer.py`. `group_id` isn't necessary
+    
+    - Specify test set path of `X_test = np.load("./data/test(A or B).npy")` and `df_test = pd.read_csv("./data/test(A or B)_text.csv")` in `./src/dataset.py` 

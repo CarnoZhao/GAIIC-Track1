@@ -27,6 +27,14 @@ Here is a basic part of codes for [GAIIC-Track1](https://www.heywhale.com/home/c
     └── optimizer.py
 ```
 
+### Solution Idea
+
+1. Visual-Bert was used to integrated multi-modality infomation, followed by a multi head MLP classifier for 13 binary classification task
+
+2. Multiple augmentations were designed for robust training, including `        `
+
+3. Model ensembling gave a good result
+
 ### Run
 
 1. Run `data.ipynb` cell by cell, and make sure you specify `"preliminary_test(A or B).txt"` correctly for test set of different rounds.

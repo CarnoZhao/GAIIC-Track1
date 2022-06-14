@@ -1,8 +1,10 @@
-# Introduction
+## Solution for [GAIIC-Track1](https://www.heywhale.com/home/competition/620b34c41f3cf500170bd6ca)
+
+### Introduction
 
 Here is a basic part of codes for [GAIIC-Track1](https://www.heywhale.com/home/competition/620b34c41f3cf500170bd6ca). Other parts will be released after final.
 
-# Data Structure
+### Data Structure
 
 ```sh
 ├── config.yaml
@@ -25,7 +27,7 @@ Here is a basic part of codes for [GAIIC-Track1](https://www.heywhale.com/home/c
     └── optimizer.py
 ```
 
-# Run
+### Run
 
 1. Run `data.ipynb` cell by cell, and make sure you specify `"preliminary_test(A or B).txt"` correctly for test set of different rounds.
 
@@ -50,3 +52,12 @@ Here is a basic part of codes for [GAIIC-Track1](https://www.heywhale.com/home/c
     - Set model checkpoints paths in `Inferencer.py`. `group_id` isn't necessary
     
     - Specify test set path of `X_test = np.load("./data/test(A or B).npy")` and `df_test = pd.read_csv("./data/test(A or B)_text.csv")` in `./src/dataset.py` 
+
+### Results
+
+Rounds|Place|Score
+--|--|--
+Preliminary-A|1st|0.95823330
+Preliminary-B|1st|0.95555683
+Semi-final-A|2nd|0.93149024
+Semi-final-B|2nd|0.95485400
